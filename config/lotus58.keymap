@@ -18,13 +18,13 @@
 // |  CTRL |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
 // |  TAB  |  Q  |  W  |  F   |  P   |  B   |                   |  J   |  L    |  U    |  Y   |   ;   | CTRL  |
 // |  ESC  |  A  |  R  |  S   |  T   |  G   |                   |  M   |  N    |  E    |  I   |   O   |   '   |
-// | SHIFT |  Z  |  X  |  C   |  D   |  V   |   "["  |  |  "]"  |  K   |  H    |  ,    |  .   |   /   | SHIFT |
+// | SHIFT |  Z  |  X  |  C   |  D   |  V   | GAMING |  |  "]"  |  K   |  H    |  ,    |  .   |   /   | SHIFT |
 //                     | GUI  | ALT  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 			bindings = <
 &kp LCTRL &kp N1      &kp N2      &kp N3      &kp N4   &kp N5       &kp LC(UP) &kp K_PP &kp N6      &kp N7 &kp N8          &kp N9       &kp N0        &kp GRAVE
 &kp TAB   &kp Q       &kp W       &kp F       &kp P    &kp B                            &kp J       &kp L  &kp U           &kp Y        &kp SEMI      &kp LCTRL
 &kp ESC   &kp A       &kp R       &kp S       &kp T    &kp G                            &kp M       &kp N  &kp E           &kp I        &kp O         &kp SQT
-&kp LSHFT &mt LGUI Z  &mt LALT X  &mt LSHFT C &kp D    &mt LCTRL V  &kp LBKT   &kp RBKT &mt RCTRL K &kp H  &mt RSHFT COMMA &mt LALT DOT &mt RGUI FSLH &kp RSHFT
+&kp LSHFT &mt LGUI Z  &mt LALT X  &mt LSHFT C &kp D    &mt LCTRL V  &tog 3     &kp RBKT &mt RCTRL K &kp H  &mt RSHFT COMMA &mt LALT DOT &mt RGUI FSLH &kp RSHFT
                                   &kp LGUI    &kp LALT &mo 1        &kp SPACE  &kp RET  &mo 2  &kp BSPC    &kp RGUI
 			>;
 
@@ -65,6 +65,24 @@
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+		};
+
+        gaming_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |  CTRL |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
+// |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | CTRL  |
+// |  ESC  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   |   "["  |  |  "]"  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+//                     | GUI  | ALT  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
+			bindings = <
+&kp LCTRL &kp N1 &kp N2 &kp N3   &kp N4   &kp N5 &kp LC(UP) &kp K_PP &kp N6 &kp N7   &kp N8    &kp N9  &kp N0   &kp GRAVE
+&kp TAB   &kp Q  &kp W  &kp E    &kp R    &kp T                      &kp Y  &kp U    &kp I     &kp O   &kp P    &kp LCTRL
+&kp ESC   &kp A  &kp S  &kp D    &kp F    &kp G                      &kp H  &kp J    &kp K     &kp L   &kp SEMI &kp SQT
+&kp LSHFT &kp Z  &kp X  &kp C    &kp V    &kp B  &trans     &trans   &kp N  &kp M    &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+                        &trans   &trans   &trans &trans     &trans   &trans &trans   &trans
+			>;
+
+			sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT) &inc_dec_kp PG_UP PG_DN>;
 		};
 	};
 };

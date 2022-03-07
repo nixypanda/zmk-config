@@ -26,18 +26,18 @@
 		compatible = "zmk,keymap";
 
 		default_layer {
-// ------------------------------------------------------------------------------------------------------------------------------
-// |  CTRL |   1   |   2   |    3    |  4  |     5     |                   |     6     |   7  |    8    |   9   |   0   |   `   |
-// |  TAB  |   Q   |   W   |    F    |  P  |     B     |                   |     J     |   L  |    U    |   Y   |   ;   | CTRL  |
-// |  ESC  |   A   |   R   |    S    |  T  |     G     |                   |     M     |   N  |    E    |   I   |   O   |   '   |
-// | SHIFT | Z/GUI | X/ALT | C/SHIFT |  D  | V/Control | GAMING |  |  "]"  | K/Control |   H  | ,/Shift | ./Alt | //GUI | SHIFT |
-//                         |    GUI  | ALT |   LOWER   |  SPACE |  | ENTER |   RAISE   | BSPC |   GUI   |
+// ------------------------------------------------------------------------------------------------------------------------
+// |  CTRL |   1    |   2   |    3    |  4  |   5   |                   |   6   |   7  |    8    |   9   |   0    |   `   |
+// |  TAB  |   Q    |   W   |    F    |  P  |   B   |                   |   J   |   L  |    U    |   Y   |   ;    | CTRL  |
+// |  ESC  |   A    |   R   |    S    |  T  |   G   |                   |   M   |   N  |    E    |   I   |   O    |   '   |
+// | SHIFT | Z/Ctrl | X/ALT | C/SHIFT |  D  |   V   | GAMING |  |  "]"  |   K   |   H  | ,/Shift | ./Alt | //Ctrl | SHIFT |
+//                          |    GUI  | ALT | LOWER |  SPACE |  | ENTER | RAISE | BSPC |   GUI   |
 			bindings = <
-&kp LCTRL &kp N1     &kp N2     &kp N3      &kp N4   &kp N5      &kp LC(UP) &kp K_PP &kp N6      &kp N7   &kp N8          &kp N9       &kp N0        &kp GRAVE
-&kp TAB   &kp Q      &kp W      &kp F       &kp P    &kp B                           &kp J       &kp L    &kp U           &kp Y        &kp SEMI      &kp LCTRL
-&kp ESC   &kp A      &kp R      &kp S       &kp T    &kp G                           &kp M       &kp N    &kp E           &kp I        &kp O         &kp SQT
-&kp LSHFT &bm LGUI Z &bm LALT X &bm LSHFT C &kp D    &bm LCTRL V &tog 3     &kp RBKT &bm RCTRL K &kp H    &bm RSHFT COMMA &bm LALT DOT &bm RGUI FSLH &kp RSHFT
-                                &kp LGUI    &kp LALT &mo 1       &kp SPACE  &kp RET  &mo 2       &kp BSPC &kp RGUI
+&kp LCTRL &kp N1      &kp N2     &kp N3      &kp N4   &kp N5 &kp LC(UP) &kp K_PP &kp N6 &kp N7   &kp N8          &kp N9       &kp N0         &kp GRAVE
+&kp TAB   &kp Q       &kp W      &kp F       &kp P    &kp B                      &kp J  &kp L    &kp U           &kp Y        &kp SEMI       &kp LCTRL
+&kp ESC   &kp A       &kp R      &kp S       &kp T    &kp G                      &kp M  &kp N    &kp E           &kp I        &kp O          &kp SQT
+&kp LSHFT &bm LCTRL Z &bm LALT X &bm LSHFT C &kp D    &kp V  &tog 3     &kp RBKT &kp K  &kp H    &bm RSHFT COMMA &bm LALT DOT &bm RCTRL FSLH &kp RSHFT
+                                 &kp LGUI    &kp LALT &mo 1  &kp SPACE  &kp RET  &mo 2  &kp BSPC &kp RGUI
 			>;
 
 			sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT) &inc_dec_kp PG_UP PG_DN>;

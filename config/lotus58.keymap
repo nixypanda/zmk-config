@@ -46,15 +46,15 @@
 		lower_layer {
 // ---------------------------------------------------------------------------
 // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |           |   |   |   |   |   |   |
-// |       |     | "|" |  \  |  {  |  }  |           |   | _ | - | + |   |   |
-// |   `   |  !  |  @  |  #  |  $  |  %  |           | ^ | & | * | ( | ) | ~ |
-// |       |     |     |  =  |  [  |  ]  |   |   |   |   | : | < | > | ? |   |
+// |       |     | "|" |  =  |  {  |  }  |           |   | _ | - | + |   |   |
+// |   `   |  !  |  @  |  #  |  $  |  %  |           | ^ | & | * | ( | ) | " |
+// |       |  `  |  ~  |  \  |  [  |  ]  |   |   |   |   | : | < | > | ? |   |
 //                     |     |     |     |   |   |   |   |   |   |
 			bindings = <
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans    &trans         &trans          &trans      &trans    &trans
-&trans     &trans       &kp PIPE     &kp BSLH     &kp LBRC     &kp RBRC                   &trans    &kp UNDERSCORE &kp MINUS       &kp KP_PLUS &trans    &trans
-&kp GRAVE  &kp EXCL     &kp AT       &kp HASH     &kp DOLLAR   &kp PRCNT                  &kp CARET &kp AMPS       &kp KP_MULTIPLY &kp LPAR    &kp RPAR  &kp TILDE
-&trans     &trans       &trans       &kp EQUAL    &kp LBKT     &kp RBKT     &trans &trans &trans    &kp COLON      &kp LT          &kp GT      &kp QMARK &trans
+&trans     &trans       &kp PIPE     &kp EQUAL    &kp LBRC     &kp RBRC                   &trans    &kp UNDERSCORE &kp MINUS       &kp KP_PLUS &trans    &trans
+&kp GRAVE  &kp EXCL     &kp AT       &kp HASH     &kp DOLLAR   &kp PRCNT                  &kp CARET &kp AMPS       &kp KP_MULTIPLY &kp LPAR    &kp RPAR  &kp DQT
+&trans     &kp GRAVE    &kp TILDE    &kp BSLH     &kp LBKT     &kp RBKT     &trans &trans &trans    &kp COLON      &kp LT          &kp GT      &kp QMARK &trans
                                      &trans       &trans       &trans       &trans &trans &trans    &trans         &trans
 			>;
 

@@ -8,6 +8,15 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/rgb.h>
+#include <dt-bindings/zmk/backlight.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define DEFAULT  0
+#define LOWER    1
+#define RAISE    2
+#define GAMING   3
+#define SETTINGS 4
 
 / {
     behaviors {
@@ -26,30 +35,30 @@
 		compatible = "zmk,keymap";
 
 		default_layer {
-// ------------------------------------------------------------------------------------------------------------------------------
-// |  CTRL |   1    |   2   |    3    |  4  |   5  |                              |  6  |  7  |    8    |   9   |   0    |   `   |
-// |  TAB  |   Q    |   W   |    F    |  P  |   B  |                              |  J  |  L  |    U    |   Y   |   ;    | CTRL  |
-// |  ESC  |   A    |   R   |    S    |  T  |   G  |                              |  M  |  N  |    E    |   I   |   O    |   '   |
-// | SHIFT | Z/Ctrl | X/ALT | C/SHIFT |  D  |   V  |    GAMING   |  |     "]"     |  K  |  H  | ,/Shift | ./Alt | //Ctrl | SHIFT |
-//                          |    ALT  | GUI | BSPC | ENTER/LOWER |  | SPACE/RAISE | TAB | GUI |   ALT   |
+// ----------------------------------------------------------------------------------------------------------------------------------------
+// |  CTRL |   1    |   2   |    3    |  4  |   5  |                              |       6      |  7  |    8    |   9   |   0    |   `   |
+// |  TAB  |   Q    |   W   |    F    |  P  |   B  |                              |       J      |  L  |    U    |   Y   |   ;    | CTRL  |
+// |  ESC  |   A    |   R   |    S    |  T  |   G  |                              |       M      |  N  |    E    |   I   |   O    |   '   |
+// | SHIFT | Z/Ctrl | X/ALT | C/SHIFT |  D  |   V  |    GAMING   |  |     "]"     |       K      |  H  | ,/Shift | ./Alt | //Ctrl | SHIFT |
+//                          |    ALT  | GUI | BSPC | ENTER/LOWER |  | SPACE/RAISE | TAB/SETTINGS | GUI |   ALT   |
 			bindings = <
-&kp LCTRL &kp N1      &kp N2     &kp N3      &kp N4   &kp N5    &kp LC(UP) &kp K_PP    &kp N6  &kp N7   &kp N8          &kp N9       &kp N0         &kp GRAVE
-&kp TAB   &kp Q       &kp W      &kp F       &kp P    &kp B                            &kp J   &kp L    &kp U           &kp Y        &kp SEMI       &kp LCTRL
-&kp ESC   &kp A       &kp R      &kp S       &kp T    &kp G                            &kp M   &kp N    &kp E           &kp I        &kp O          &kp SQT
-&kp LSHFT &bm LCTRL Z &bm LALT X &bm LSHFT C &kp D    &kp V     &tog 3     &kp RBKT    &kp K   &kp H    &bm RSHFT COMMA &bm LALT DOT &bm RCTRL FSLH &kp RSHFT
-                                 &kp LALT    &kp LGUI &kp BSPC  &lt 1 RET  &lt 2 SPACE &kp TAB &kp RGUI &kp RALT
+&kp LCTRL &kp N1      &kp N2     &kp N3      &kp N4   &kp N5    &kp LC(UP) &kp K_PP            &kp N6           &kp N7   &kp N8          &kp N9       &kp N0         &kp GRAVE
+&kp TAB   &kp Q       &kp W      &kp F       &kp P    &kp B                                    &kp J            &kp L    &kp U           &kp Y        &kp SEMI       &kp LCTRL
+&kp ESC   &kp A       &kp R      &kp S       &kp T    &kp G                                    &kp M            &kp N    &kp E           &kp I        &kp O          &kp SQT
+&kp LSHFT &bm LCTRL Z &bm LALT X &bm LSHFT C &kp D    &kp V     &tog GAMING    &kp RBKT        &kp K            &kp H    &bm RSHFT COMMA &bm LALT DOT &bm RCTRL FSLH &kp RSHFT
+                                 &kp LALT    &kp LGUI &kp BSPC  &lt LOWER RET  &lt RAISE SPACE &lt SETTINGS TAB &kp RGUI &kp RALT
 			>;
 
 			sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT) &inc_dec_kp PG_UP PG_DN>;
 		};
 
 		lower_layer {
-// ---------------------------------------------------------------------------
-// | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |           |   |   |   |   |   |   |
-// |       |     | "|" |  =  |  {  |  }  |           |   | _ | - | + |   |   |
-// |   `   |  !  |  @  |  #  |  $  |  %  |           | ^ | & | * | ( | ) | " |
-// |       |  `  |  ~  |  \  |  [  |  ]  |   |   |   |   | : | < | > | ? |   |
-//                     |     |     |     |   |   |   |   |   |   |
+// ---------------------------------------------------------------
+// |   |   |     |   |   |   |           |   |   |   |   |   |   |
+// |   |   | "|" | = | { | } |           |   | _ | - | + |   |   |
+// | ` | ! |  @  | # | $ | % |           | ^ | & | * | ( | ) | " |
+// |   | ` |  ~  | \ | [ | ] |   |   |   |   | : | < | > | ? |   |
+//               |   |   |   |   |   |   |   |   |   |
 			bindings = <
 &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans    &trans         &trans          &trans      &trans    &trans
 &trans     &trans       &kp PIPE     &kp EQUAL    &kp LBRC     &kp RBRC                   &trans    &kp UNDERSCORE &kp MINUS       &kp KP_PLUS &trans    &trans
@@ -69,11 +78,11 @@
 // |    |    |    |    |    |    |   |  |   | ^  | <- |  , |  .  |  /  |     |
 //                |    |    |    |   |  |   |    |    |    |
 			bindings = <
-&kp F1    &kp F2           &kp F3            &kp F4            &kp F5 &kp F6 &trans &trans &kp F7   &kp F8    &kp F9    &kp F10 &kp F11  &kp F12
-&trans    &trans           &trans            &trans            &trans &trans               &kp DOWN &kp RIGHT &trans    &trans  &trans   &trans
-&kp GRAVE &kp N1           &kp N2            &kp N3            &kp N4 &kp N5               &kp N6   &kp N7    &kp N8    &kp N9  &kp N0   &trans
-&trans    &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans &trans &trans &trans &kp UP   &kp LEFT  &kp COMMA &kp DOT &kp FSLH &trans   
-                                             &trans            &trans &trans &trans &trans &trans   &trans    &trans
+&kp F1    &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &trans &trans &kp F7   &kp F8    &kp F9    &kp F10 &kp F11  &kp F12
+&trans    &trans &trans &trans &trans &trans               &kp DOWN &kp RIGHT &trans    &trans  &trans   &trans
+&kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5               &kp N6   &kp N7    &kp N8    &kp N9  &kp N0   &trans
+&trans    &trans &trans &trans &trans &trans &trans &trans &kp UP   &kp LEFT  &kp COMMA &kp DOT &kp FSLH &trans   
+                        &trans &trans &trans &trans &trans &trans   &trans    &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
@@ -92,6 +101,24 @@
 &kp ESC   &kp A  &kp S  &kp D  &kp F  &kp G                    &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp SQT
 &kp LSHFT &kp Z  &kp X  &kp C  &kp V  &kp B  &trans    &trans  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
                         &trans &trans &trans &kp SPACE &kp RET &trans &trans &trans
+			>;
+
+			sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT) &inc_dec_kp PG_UP PG_DN>;
+		};
+
+        settings_layer {
+// ---------------------------------------------------------------
+// |  |   |   |     |       |  |      |  |      |     |   |   |  |
+// |  |   |                 |  |      |  |   Power Contrlos   |  |
+// |  |  Underglow Controls |  |      |  | Backlight Controls |  |
+// |  |                     |  |  | | |  | Bluetooth Controls |  |
+//           |     |     |  |  |  | | |  |     |
+			bindings = <
+&trans &trans          &trans          &trans          &trans          &trans &trans &trans &trans     &trans           &trans            &trans            &trans       &trans
+&trans &trans          &rgb_ug RGB_TOG &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans               &trans     &ext_power EP_ON &ext_power EP_OFF &ext_power EP_TOG &trans       &trans
+&trans &rgb_ug RGB_HUI &rgb_ug RGB_HUD &rgb_ug RGB_SPI &rgb_ug RGB_SPD &trans               &trans     &bl BL_INC       &bl BL_DEC        &bl BL_TOG        &bl BL_CYCLE &trans
+&trans &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_EFF &rgb_ug RGB_EFR &trans &trans &trans &bt BT_CLR &bt BT_SEL 0     &bt BT_SEL 1      &out OUT_USG      &out OUT_BLE &trans
+                                       &trans          &trans          &trans &trans &trans &trans     &trans           &trans
 			>;
 
 			sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT) &inc_dec_kp PG_UP PG_DN>;

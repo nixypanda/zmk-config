@@ -12,8 +12,8 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define DEFAULT  0
-#define LOWER    1
-#define RAISE    2
+#define LOWER    1 // Symbols
+#define RAISE    2 // Numbers + Navigation
 #define GAMING   3
 #define SETTINGS 4
 

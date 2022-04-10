@@ -52,18 +52,18 @@
 		};
 
 		lower_layer {
-// ---------------------------------------------------------------
-// |   |   |     |   |   |   |           |   |   |   |   |   |   |
-// |   |   | "|" | = | { | } |           |   | _ | - | + |   |   |
-// | ` | ! |  @  | # | $ | % |           | ^ | & | * | ( | ) | " |
-// |   | ` |  ~  | \ | [ | ] |   |   |   |   | : | < | > | ? |   |
-//               |   |   |   |   |   |   |   |   |   |
+// -------------------------------------------------------------------------------------------
+// |     |     |     |     |     |     |                 |     |     |     |     |     |     |
+// |     |  !  |  @  |  #  |  $  |  %  |                 |  ^  |  &  |  *  |  (  |  )  |     |
+// |     |  [  |  ]  |  (  |  )  |  `  |                 | "|" |  _  |  -  |  =  |  +  |  "  |
+// |     |     |  !  |  {  |  }  |  \  |     |     |     |  ~  |  :  |  <  |  >  |  ?  |     |
+//                   |     |     |     |     |     |     |     |     |     | 
 			bindings = <
-&bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4               &trans    &trans         &trans          &trans      &trans    &trans
-&trans     &trans       &kp PIPE     &kp EQUAL    &kp LBRC     &kp RBRC                   &trans    &kp UNDERSCORE &kp MINUS       &kp KP_PLUS &trans    &trans
-&kp GRAVE  &kp EXCL     &kp AT       &kp HASH     &kp DOLLAR   &kp PRCNT    &trans &trans &kp CARET &kp AMPS       &kp KP_MULTIPLY &kp LPAR    &kp RPAR  &kp DQT
-&trans     &kp GRAVE    &kp TILDE    &kp BSLH     &kp LBKT     &kp RBKT     &trans &trans &trans    &kp COLON      &kp LT          &kp GT      &kp QMARK &trans
-                                     &trans       &trans       &trans       &trans &trans &trans    &trans         &trans
+&trans  &trans    &trans    &trans    &trans      &trans                     &trans     &trans          &trans           &trans     &trans       &trans
+&trans  &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR  &kp PRCNT  &trans  &trans  &kp CARET  &kp AMPS        &kp KP_MULTIPLY  &kp LPAR   &kp RPAR     &trans
+&trans  &kp LBKT  &kp RBKT  &kp LPAR  &kp RPAR    &kp GRAVE                  &kp PIPE   &kp UNDERSCORE  &kp MINUS        &kp EQUAL  &kp KP_PLUS  &kp DQT
+&trans  &trans    &kp EXCL  &kp LBRC  &kp RBRC    &kp BSLH   &trans  &trans  &kp TILDE  &kp COLON       &kp LT           &kp GT     &kp QMARK    &trans
+                            &trans    &trans      &trans     &trans  &trans  &trans     &trans          &trans
 			>;
 
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;

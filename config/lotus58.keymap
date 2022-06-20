@@ -73,8 +73,8 @@
 //                   |     |     |     |     |     |     |     |     |     | 
 			bindings = <
 &trans  &trans    &trans    &trans    &trans      &trans                     &trans     &trans          &trans           &trans     &trans       &trans
-&trans  &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR  &kp PRCNT  &trans  &trans  &kp CARET  &kp AMPS        &kp KP_MULTIPLY  &kp LPAR   &kp RPAR     &trans
-&trans  &kp LBKT  &kp RBKT  &kp LPAR  &kp RPAR    &kp GRAVE                  &kp PIPE   &kp UNDERSCORE  &kp MINUS        &kp EQUAL  &kp KP_PLUS  &kp DQT
+&trans  &kp EXCL  &kp AT    &kp HASH  &kp DOLLAR  &kp PRCNT                  &kp CARET  &kp AMPS        &kp KP_MULTIPLY  &kp LPAR   &kp RPAR     &trans
+&trans  &kp LBKT  &kp RBKT  &kp LPAR  &kp RPAR    &kp GRAVE  &trans  &trans  &kp PIPE   &kp UNDERSCORE  &kp MINUS        &kp EQUAL  &kp KP_PLUS  &kp DQT
 &trans  &trans    &kp EXCL  &kp LBRC  &kp RBRC    &kp BSLH   &trans  &trans  &kp TILDE  &kp COLON       &kp LT           &kp GT     &kp QMARK    &trans
                             &trans    &trans      &trans     &trans  &trans  &trans     &trans          &trans
 			>;

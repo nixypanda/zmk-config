@@ -43,12 +43,12 @@
 		compatible = "zmk,keymap";
 
 		default_layer {
-// -----------------------------------------------------------------------------------------------------------------------------
-// |  CTRL |   1    |   2   |  3  |  4  |     5      |                        |     6     |  7  |  8  |   9   |   0    |   `   |
-// |  TAB  |   Q    |   W   |  F  |  P  |     B      |                        |     J     |  L  |  U  |   Y   |   ;    | CTRL  |
-// |  ESC  |   A    |   R   |  S  |  T  |     G      |                        |     M     |  N  |  E  |   I   |   O    |   '   |
-// | SHIFT | Z/Ctrl | X/ALT |  C  |  D  |     V      |   GAMING    |  |  "]"  |     K     |  H  |  ,  | ./Alt | //Ctrl | SHIFT |
-//                          | ALT | GUI | BSPC/LOWER | ENTER/SHIFT |  | SPACE | TAB/RAISE | GUI | ALT |
+// ----------------------------------------------------------------------------------------------------------------------------------
+// |  CTRL |   1    |   2   |  3  |  4  |     5      |                        |     6     |  7  |    8     |   9   |   0    |   `   |
+// |  TAB  |   Q    |   W   |  F  |  P  |     B      |                        |     J     |  L  |    U     |   Y   |   ;    | CTRL  |
+// |  ESC  |   A    |   R   |  S  |  T  |     G      |                        |     M     |  N  |    E     |   I   |   O    |   '   |
+// | SHIFT | Z/Ctrl | X/ALT |  C  |  D  |     V      |   GAMING    |  |  "]"  |     K     |  H  |    ,     | ./Alt | //Ctrl | SHIFT |
+//                          | ALT | GUI | BSPC/LOWER | ENTER/SHIFT |  | SPACE | TAB/RAISE | GUI | SETTINGS |
 //
 // NOTE: Having backspace with a layer tap is annoying but get's you in the
 // habbit of not holding it but using combinations to delete words which works
@@ -109,13 +109,15 @@
 // |     |     |     |     |     |     |                 |     |      |      |      |     |     |
 // |     | F1  | F2  | F3  | F4  | F5  |                 |     |      |      |      |     |     |
 // |     | F6  | F7  | F8  | F9  | F10 |                 |     | VOLv | MUTE | VOL^ |     |     |
-// |     | F11 | F12 |     |     |     |     |     |     |     |      |      |      |     |     |
+// |     | F11 | F12 |     |     |     |     |     |     |     |   '  |   "  |      |     |     |
 //                   |     |     |     |     |     |     |     |      |      |
+// Adding sqt and dqt here as the last row on right side sometimes does not work 
+// This is temprory (hopefully) and I will find a fix for this soon-ish.
 			bindings = <
 &trans  &trans   &trans   &trans  &trans  &trans                   &trans  &trans        &trans        &trans      &trans  &trans
 &trans  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5                   &trans  &trans        &trans        &trans      &trans  &trans
 &trans  &kp F6   &kp F7   &kp F8  &kp F9  &kp F10  &trans  &trans  &trans  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_MUTE  &trans  &trans
-&trans  &kp F11  &kp F12  &trans  &trans  &trans   &trans  &trans  &trans  &trans        &trans        &trans      &trans  &trans   
+&trans  &kp F11  &kp F12  &trans  &trans  &trans   &trans  &trans  &trans  &kp SQT       &kp DQT       &trans      &trans  &trans   
                           &trans  &trans  &trans   &trans  &trans  &trans  &trans        &trans
 			>;
 
